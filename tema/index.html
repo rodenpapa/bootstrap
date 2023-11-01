@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Accountancy Cloud</title>
+</head>
+
+<body>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Регистрация</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-4">
+                        <label for="validationCustom01" class="form-label">Имя</label>
+                        <input type="text" class="form-control" id="validationCustom01" value="Иван" required>
+                        <div class="valid-feedback">
+                            Все хорошо!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustom02" class="form-label">Фамилия</label>
+                        <input type="text" class="form-control" id="validationCustom02" value="Петров" required>
+                        <div class="valid-feedback">
+                            Все хорошо!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustomUsername" class="form-label">Имя пользователя</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+                                required>
+                            <div class="invalid-feedback">
+                                Пожалуйста, выберите имя пользователя.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label">Город</label>
+                        <input type="text" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Укажите действующий город.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom04" class="form-label">Область</label>
+                        <select class="form-select" id="validationCustom04" required>
+                            <option selected disabled value="">Выберите...</option>
+                            <option>...</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Пожалуйста, выберите корректный город.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom05" class="form-label">Индекс</label>
+                        <input type="text" class="form-control" id="validationCustom05" required>
+                        <div class="invalid-feedback">
+                            Пожалуйста, предоставьте действующий почтовый индекс.
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                Примите условия и соглашения
+                            </label>
+                            <div class="invalid-feedback">
+                                Вы должны принять перед отправкой.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Отправить форму</button>
+                    </div>
+                </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary">Норм</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Всплывающая штука</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Появилась
+            </div>
+        </div>
+    </div>
+
+
+
+    <header>
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-3 col-xl-2 col-lg-2 col-md-3">
+                    <img src="img/logo.svg" alt="" width="195px" height="42px">
+                </div>
+                <div
+                    class="col-4 col-sm-3 col-md-5 col-lg-5 col-xl-4 col-xxl-4 d-none d-lg-block d-xl-block d-xxl-block my-auto">
+                    <nav class="navbar">
+                        <a class="link">Home</a>
+                        <a class="link">How it works</a>
+                        <a class="link">What we do</a>
+                        <a class="link">Resources</a>
+                    </nav>
+                </div>
+                <div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-2">
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Talk to an Expert</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <div class="container gap-5">
+                        <div class="row">
+                            <div class="text_title">Get your finances right</div>
+                        </div>
+                        <div class="row my-4">
+                            <div class="text_des">Get your finances right with Accountancy Cloud. We offer the best
+                                accounting, R&D credits and CFO services for ambitious businesses who want to grow.
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="btn_sec1"> <button type="button" class="btn btn-dark px-3"
+                                    style="padding: 15px;" id="liveToastBtn">Talk to us</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <img src="img/sl_1.png" width="100%" height="auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-left">
+                    <img src="img/sl_2.png" width="50%" height="auto">
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <div class="container gap-2">
+                        <div class="row">
+                            <div class="text_title_mini">The best finance stack for entrepreneurs</div>
+                        </div>
+                        <div class="row my-4">
+                            <div class="text_des">70% of companies switch to us from their DIY or legacy system. Now,
+                                get your bookkeeping, tax prep and CFO problems, solved. Complete our <a href="#"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-title="Контактная форма - форма контакта, где учитываются пожелания клиента.">contact form</a>, and
+                                find out why 9 out of 10 customers recommend us.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="text_title">Why Switch?</div>
+            </div>
+            <div class="row justify-content-center text-center">
+                <div class="col-12">
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col"><img src="img/sl3_1.png" width="200px" height="150px">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="bold_title">Powerful software</p>
+                                        <p class="text_des">Included in our service, each customer gets
+                                            in-house<br>
+                                            software to access live <a href="#">financial dashboards</a> and<br>
+                                            real-time management reports.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col"><img src="img/sl3_2.png" width="200px" height="150px"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="bold_title">Track cashflow</p>
+                                        <p class="text_des">Stay on top of your working capital, <a href="">taxes</a>,
+                                            and cashflow, to ensure your business is
+                                            performing<br>
+                                            at its best.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col"><img src="img/sl3_3.png" width="200px" height="150px"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="bold_title">Award winning support</p>
+                                        <p class="text_des">Expect the best from us. Get a dedicated finance team<br>
+                                            that will handle all your accounting, R&D credits and CFO needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="prev">
+                            <span style="color: black; font-size: 50px; font-weight: bold;">
+                                ↔ </span>
+                            <span class="visually-hidden">Предыдущий</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="next">
+                            <span style="color: black; font-size: 50px; font-weight: bold;"> ↔ </span>
+                            <span class="visually-hidden">Следующий</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-inline-flex">
+                <button class="btn btn-danger">Discover what we do</button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <form class="row g-3 needs-validation">
+                <div class="col-md-4">
+                  <label for="validationCustom01" class="form-label">First name</label>
+                  <input type="text" class="form-control" id="validationCustom01" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="validationCustom02" class="form-label">Last name</label>
+                  <input type="text" class="form-control" id="validationCustom02" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="validationCustomUsername" class="form-label">Username</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                      Please choose a username.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationCustom03" class="form-label">City</label>
+                  <input type="text" class="form-control" id="validationCustom03" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                      Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                      You must agree before submitting.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-danger" type="submit">Submit form</button>
+                </div>
+              </form>
+        </div>
+    </section>
+
+    <footer class="p-4" style="background-color: #302E3F;">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col">
+                    <img src="img/mono_logo.png" alt=""><span style="margin-left: 18px;" class="logo_text">Your new
+                        finance team</span>
+                </div>
+            </div>
+            <div class="row justify-content-around text-center" style="padding-top: 45px;">
+                <div class="col">
+                    <div class="foot_link_t">How it works</div>
+                    <div class="foot_link">Hassle Free Switching</div>
+                </div>
+                <div class="col">
+                    <div class="foot_link_t">What we do</div>
+                    <div class="foot_link">Finance Teams</div>
+                    <div class="foot_link">Tax</div>
+                    <div class="foot_link">R&D Tax Credits</div>
+                    <div class="foot_link">A platform for success</div>
+                    <div class="foot_link">Software Integrations</div>
+                </div>
+                <div class="col">
+                    <div class="foot_link_t">Who we help</div>
+                    <div class="foot_link">Startups</div>
+                    <div class="foot_link">Small Business</div>
+                    <div class="foot_link">Medium Business</div>
+                    <div class="foot_link">CFO & Head of Finance</div>
+                </div>
+                <div class="col">
+                    <div class="foot_link_t">Resources</div>
+                    <div class="foot_link">Case Studies</div>
+                    <div class="foot_link">Blogs</div>
+                    <div class="foot_link">Guides</div>
+                    <div class="foot_link">Podcasts</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="./scripts.js"></script>
+</body>
+
+</html>
